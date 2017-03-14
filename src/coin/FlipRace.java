@@ -17,13 +17,20 @@ public class FlipRace {
 				coin1.flip();
 				coin2.flip();
 				System.out.println("Coin 1 : " + coin1.toString());
+				if(coin1.isHeads())
+					countofheads++;
+				if(!coin1.isHeads()){
+					countofheads = 0;
+				}
 				System.out.println("Coin 2 : " + coin2.toString());
-					if(coin1.isHeads() || coin2.isHeads()){
-						countofheads++;
-					}
-					else{
-						countofheads = 0;
-					}
+				if(coin2.isHeads())
+					countofheads++;
+				if(!coin2.isHeads()){
+					countofheads = 0;
+				}
+				
+					
+					
 			}
 		
 	
