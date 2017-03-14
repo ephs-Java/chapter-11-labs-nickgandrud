@@ -8,7 +8,10 @@ public class DiceSimulation {
 		final int NUMBER = 10000; // the number of times to roll the dice
 		
 		// create 2 Dice objects, die1 and die2
+	Dice die1 = new Dice();
+	Dice die2 = new Dice();
 	
+		
 		
 		int count = 0; // number of times the dice were rolled
 		int snakeEyes = 0; // number of times snake eyes is rolled
@@ -20,7 +23,36 @@ public class DiceSimulation {
 
 		// create 2 dice, roll them 10000 times, and keep track of the doubles.
 		// what method(s) do you need to write in the Dice class to make this work?
+		int [] doublesOfDice = new int[6];
 		
+		for(int i = 1; i < 10000; i++){
+			count++;
+			die1.roll();
+			die2.roll();
+				
+			
+			boolean isDouble = die1.isEquals(die2);
+				if(die1.spots == 1 && isDouble){
+					snakeEyes++;
+					
+				}
+				if(die1.spots == 2 && isDouble){
+					twos++;
+				}
+				if(die1.spots == 3 && isDouble){
+					threes++;
+				}
+				if(die1.spots == 4 && isDouble){
+					fours++;
+				}
+				if(die1.spots == 5 && isDouble){
+					fives++;
+				}
+				if(die1.spots == 6 && isDouble){
+					sixes++;
+				}
+			
+		}
 		
 		// preformatted output to be used after the 10000 rolls above.
 		System.out.println("You rolled snake eyes " + snakeEyes + " out of " + count + " rolls.");
